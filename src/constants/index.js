@@ -68,6 +68,11 @@ export const socialLinks = [
 
 export const projects = [
     {
+        name: 'Wild Oasis Hotel Web application',
+        description: 'A full-stack hotel management application utilizing Supabase as the backend, ensuring seamless CRUD operations for cabin and reservation management. Implemented secure user authentication and session management, enhancing data privacy. ',
+        link: 'https://the-wild-oasis-hotel-vijay.netlify.app/login',
+    },
+    {
         name: 'React Pizza',
         description: 'Developed a web application that adds items into cart increase and decrease items and order our Pizza(hypothetical)',
         link: 'https://fast-react-pizza-vijay.netlify.app',
