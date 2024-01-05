@@ -21,14 +21,14 @@ function Contact() {
   };
 
   const handleSubmit=(e)=>{
-    console.log("entered here")
     
     e.preventDefault();
     setIsLoading(true);
-    setCurrentAnimation('hit')
+   
     emailjs.send(
-      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
       import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+      
       {
           from_name: form.name,
           to_name: "Vijay",
@@ -36,7 +36,7 @@ function Contact() {
           to_email: 'vijaykumar022103@gmail.com', // Specify the desired recipient email
           message: form.message
       },
-      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
   ).then(()=>{
       setIsLoading(false);
       showAlert({show:true,text:"message sent succefulluly" , type:'success'})
@@ -60,7 +60,8 @@ function Contact() {
     {alert.show&& <Alert {...alert}/>}
      
     <div className=" flex-1 min-w-[50%] flex flex-col">
-         <h1 className="head-text">Get In Touch</h1>         
+         <h1 className="head-text">Get In Touch</h1>    
+         <p className=" font-semibold text-black-500 ">Contact Me - +91 9618460803 📞</p>     
          <form  className="w-full flex flex-col gap-7 mt-14" onSubmit={handleSubmit}>
             <label className="text-black-500 font-semibold">
               Name
